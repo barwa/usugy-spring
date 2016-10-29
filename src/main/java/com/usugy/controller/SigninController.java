@@ -15,14 +15,14 @@ public class SigninController {
     @RequestMapping(value = "/signin", method = RequestMethod.GET)
     public String signin(ModelMap modelMap) {
 
-        return "signin";
+        return "signin3";
     }
 
     @RequestMapping(value = "/signinFailed", method = RequestMethod.GET)
     public String signinFailed(ModelMap modelMap) {
 
         modelMap.addAttribute("error", "true");
-        return "signin";
+        return "signin3";
     }
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(ModelMap modelMap) {

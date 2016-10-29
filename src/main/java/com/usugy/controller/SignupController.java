@@ -34,14 +34,14 @@ public class SignupController {
             account = new Account();
         }
         model.addAttribute("account", account);
-        return "signup2";
+        return "signup3";
     }
 
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String signup(@Valid @ModelAttribute("account") Account account, BindingResult result, HttpSession session) {
         if(result.hasErrors())
         {
-            return "signup2";
+            return "signup3";
         }
         accountService.save(account);
         return "redirect:/";

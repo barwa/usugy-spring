@@ -26,10 +26,10 @@ public class HomeController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model, Principal principal) {
 
-        if (principal == null) return "redirect:/signup";
-        Account account = new Account();
-        model.addAttribute("account", account);
-        return "index";
+//        if (principal == null) return "redirect:/signup";
+//        Account account = new Account();
+//        model.addAttribute("account", account);
+        return "index3";
     }
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String verifyEmail(@ModelAttribute("account") Account account, Model model) {
@@ -41,6 +41,7 @@ public class HomeController {
         }
         model.addAttribute("account", account2);
         return "verifyemail";
+
     }
 
 }
