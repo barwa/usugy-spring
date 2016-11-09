@@ -13,9 +13,11 @@
 <!-- Header -->
 <header id="head">
     <div class="container">
+
         <div class="row">
+
             <h1 class="lead">SZYBKO, ŁATWO, BEZPIECZNIE</h1>
-            <p class="tagline">USUGY: znajdź usługę z której będziesz zadowolony
+            <p class="tagline">Korzystaj z usług nie ruszając się z miejsca.
             </p>
             <div class="col-md-12">
                 <form role="form">

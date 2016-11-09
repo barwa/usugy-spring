@@ -45,7 +45,9 @@
                                 <label><spring:message code="account.email"/>
                                 </label>
                                 <form:input path="email" class="form-control"/>
-                                <span class="text-danger"><form:errors path="email" element="div"></form:errors></span>
+                                <span class="text-danger">
+                                    <form:errors path="email" element="div"></form:errors>
+                                </span>
                             </div>
                             <div class="top-margin">
                                     <label><spring:message code="account.password"/>

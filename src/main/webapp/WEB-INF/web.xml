@@ -13,6 +13,7 @@
         <param-value>
             classpath:/jpaContext.xml
             classpath:/security-config.xml
+            classpath:/mail-config.xml
         </param-value>
     </context-param>
     

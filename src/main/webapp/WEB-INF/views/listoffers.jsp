@@ -11,8 +11,11 @@
 <html>
 <head>
     <title>Obecnie dostepne sa nastepujace oferty</title>
+    <link rel="stylesheet" href="assets/css/pushy.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 <body>
+
 
 <table>
     <tr>
@@ -24,6 +27,6 @@
         </tr>
     </c:forEach>
 </table>
-
+<script src="assets/js/pushy.min.js"></script>
 </body>
 </html>
