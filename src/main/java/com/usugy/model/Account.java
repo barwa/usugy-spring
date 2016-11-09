@@ -2,8 +2,12 @@ package com.usugy.model;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -49,14 +53,18 @@ public class Account implements UserDetails {
     private String password;
 
 //    @Formats.DateTime(pattern = "yyyy-MM-dd HH:mm:ss")
+    @DateTimeFormat
     private Date dateCreation;
 
-    private Boolean validated = true;
+    private Boolean validated = false;
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+//    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private Token token;
+
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<Offer> offers = new ArrayList<Offer>();
 
-    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "account", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     Set<AccountRole> roles = new HashSet<AccountRole>();
 
 
@@ -187,4 +195,5 @@ public class Account implements UserDetails {
     public boolean isEnabled() {
         return validated;
     }
+
 }

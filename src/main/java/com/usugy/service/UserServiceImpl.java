@@ -18,9 +18,6 @@ public class UserServiceImpl implements UserDetailsService {
     private AccountRepository accountRepository;
 
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Account acc = accountRepository.findByEmail(email);;
-        System.out.println("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-        System.out.println(acc.getEmail()+" "+acc.getFirstname());
-        return acc;
+        return accountRepository.findByEmail(email);
     }
 }

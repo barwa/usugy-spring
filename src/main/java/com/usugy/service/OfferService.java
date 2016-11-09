@@ -11,6 +11,7 @@ import java.util.List;
 public interface OfferService {
 
     Offer save(Offer offer);
+    Offer findbyId(Long id);
     List<Offer> findAllOffers();
 
     List<OfferReport> findAllOfferReports();

@@ -27,6 +27,8 @@ public class OfferServiceImpl implements OfferService {
         return offerRepository.save(offer);
     }
 
+    public Offer findbyId(Long id) { return offerRepository.findOne(id); }
+
     public List<Offer> findAllOffers() {
        return offerRepository.findAll();
     }

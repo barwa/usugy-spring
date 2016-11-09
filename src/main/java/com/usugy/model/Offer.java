@@ -26,6 +26,8 @@ public class Offer {
     @NotEmpty
     private String title;
     @NotEmpty
+    private String shortdesc;
+    @NotEmpty
     private String description;
 
     @ManyToOne
@@ -45,6 +47,14 @@ public class Offer {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getShortdesc() {
+        return shortdesc;
+    }
+
+    public void setShortdesc(String shortdesc) {
+        this.shortdesc = shortdesc;
     }
 
     public String getDescription() {
