@@ -17,6 +17,7 @@
     <!--// dla wszystkich stron znaczek /** wymagaj przynajmniej zalogowania jako user-->
     <http auto-config="true" use-expressions="true">
         <!--<intercept-url pattern="/signin" access="permitAll" requires-channel="https"/>-->
+        <intercept-url pattern="/confirm/*" access="permitAll" />
         <intercept-url pattern="/signin" access="permitAll" />
         <intercept-url pattern="/signinFailed" access="permitAll"/>
         <intercept-url pattern="/logout" access="permitAll"/>
