@@ -52,7 +52,7 @@
                             <div class="top-margin">
                                     <label><spring:message code="account.password"/>
                                     </label>
-                                    <form:input path="password"  class="form-control"/>
+                                    <form:password path="password"  class="form-control"/>
                                     <span class="text-danger"><form:errors path="password" element="div"></form:errors></span>
                             </div>
                             <hr>
