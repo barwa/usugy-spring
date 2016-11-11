@@ -3,6 +3,7 @@ package com.usugy.service;
 import com.usugy.model.Account;
 import org.springframework.validation.Errors;
 
+import javax.servlet.http.HttpServletRequest;
 import java.net.MalformedURLException;
 
 /**

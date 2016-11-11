@@ -1,9 +1,11 @@
 package com.usugy.controller;
 
+import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 import com.usugy.model.Account;
 import com.usugy.service.AccountService;
 import com.usugy.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,6 +22,8 @@ import java.security.Principal;
 @Controller
 //@SessionAttributes("account")
 public class HomeController {
+
+
 
     @Autowired
     private AccountService accountService;

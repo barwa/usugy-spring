@@ -24,6 +24,7 @@ public class OfferServiceImpl implements OfferService {
 
     @Transactional
     public Offer save(Offer offer) {
+        offer.setDescription(offer.getDescription().replaceAll("\n", "<br>"));
         return offerRepository.save(offer);
     }
 

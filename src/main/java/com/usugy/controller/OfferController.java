@@ -66,7 +66,6 @@ public class OfferController {
         else {
             Account account = (Account) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
             offer.setAccount(account);
-            offer.setDescription(offer.getDescription().replaceAll("\n", "<br>"));
             offerService.save(offer);
         }
 
