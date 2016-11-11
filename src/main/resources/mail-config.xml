@@ -5,10 +5,10 @@
 
 
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-        <property name="host" value="smtp.gmail.com" />
-        <property name="port" value="587" />
-        <property name="username" value="tomasz.barwicki@gmail.com" />
-        <property name="password" value="!hidden!" />
+        <property name="host" value="${mailhost}" />
+        <property name="port" value="${mailport}" />
+        <property name="username" value="${mailusername}" />
+        <property name="password" value="${mailpassword}" />
 
         <property name="javaMailProperties">
             <props>
@@ -16,6 +16,10 @@
                 <prop key="mail.smtp.starttls.enable">true</prop>
             </props>
         </property>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="classpath:/app.properties"/>
     </bean>
 
 </beans>

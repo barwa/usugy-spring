@@ -58,4 +58,10 @@
 
     </bean>
 
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations" value="classpath:/app.properties"/>
+    </bean>
+
+    <!--<context:property-placeholder location="classpath:/app.properties" />-->
+
 </beans>

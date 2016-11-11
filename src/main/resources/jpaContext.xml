@@ -44,14 +44,18 @@
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
          <!--LOCAL DEV-->
-        <property name="url" value="jdbc:mysql://localhost:3306/fitnesstracker?autoReconnect=true&amp;useSSL=false"></property>
-        <property name="username" value="root"></property>
-        <property name="password" value="dupa1234"></property>
+        <property name="url" value="jdbc:mysql://${dbhost}:${dbport}/${dbname}?autoReconnect=true&amp;useSSL=false"></property>
+        <property name="username" value="${dbusername}"></property>
+        <property name="password" value="${dbpassword}"></property>
 
         <!--OPENSHIFT PROD-->
         <!--<property name="url" value="jdbc:mysql://127.4.9.130:3306/web?autoReconnect=true&amp;useSSL=false"></property>-->
         <!--<property name="username" value="adminq4hAwNv"></property>-->
         <!--<property name="password" value="Ur8LQTSqSezM"></property>-->
 
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" value="classpath:/app.properties"/>
     </bean>
 </beans>
