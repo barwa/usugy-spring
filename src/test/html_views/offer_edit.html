@@ -1,0 +1,115 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>-->
+    <!--<%&#45;&#45; KARTIK fileupload&#45;&#45;%>-->
+    <!--<%&#45;&#45;<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">&#45;&#45;%>-->
+    <link href="assets/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- canvas-to-blob.min.js is only needed if you wish to resize images before upload.
+         This must be loaded before fileinput.min.js -->
+    <script src="assets/js/plugins/canvas-to-blob.min.js" type="text/javascript"></script>
+    <!-- sortable.min.js is only needed if you wish to sort / rearrange files in initial preview.
+         This must be loaded before fileinput.min.js -->
+    <script src="assets/js/plugins/sortable.min.js" type="text/javascript"></script>
+    <!-- purify.min.js is only needed if you wish to purify HTML content in your preview for HTML files.
+         This must be loaded before fileinput.min.js -->
+    <script src="assets/js/plugins/purify.min.js" type="text/javascript"></script>
+    <!-- the main fileinput plugin file -->
+    <script src="assets/js/fileinput.min.js"></script>
+    <!-- bootstrap.js below is needed if you wish to zoom and view file content
+         in a larger detailed modal dialog -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- optionally if you need a theme like font awesome theme you can include
+        it as mentioned below -->
+    <script src="assets/themes/fa/theme.js"></script>
+    <!-- optionally if you need translation for your language then include
+        locale file as mentioned below -->
+    <script src="assets/js/locales/pl.js"></script>
+
+    <!--<%&#45;&#45; END KARTIK fileupload&#45;&#45;%>-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--<link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css" rel="stylesheet" type="text/css">-->
+  </head><body>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12"></div>
+        </div>
+      </div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-7">
+            <ul class="breadcrumb">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Library</a>
+              </li>
+              <li class="active">Data</li>
+            </ul>
+            <form role="form">
+              <div class="form-group">
+                <label class="control-label" for="exampleInputEmail1">Nazwa Twojej usługi</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="np. fryzjer damski" type="text">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="exampleInputPassword1">Krótkie motto Twojego biznesu</label>
+                <input class="form-control" id="exampleInputPassword1" placeholder="np. Twoje włosy są dla mnie najważniejsze." type="text">
+              </div>
+              <div class="form-group">
+                <label class="control-label" for="exampleInputPassword1">Dluższy opis Twojej oferty</label>
+                <textarea class="form-control" name="Text1" rows="20" placeholder="..."></textarea>
+              </div>
+              <label class="control-label">Dodaj zdjęcia</label>
+              <input id="input-24" name="input24[]" type="file" multiple="" class="file-loading">
+              <script>
+                $(document).on('ready', function() {
+                    $("#input-24").fileinput({
+
+                        initialPreviewAsData: true,
+                        deleteUrl: "/site/file-delete",
+                        overwriteInitial: false,
+                        maxFileSize: 100,
+                        initialCaption: "Zdjęcia zrealizowanych usług"
+                    });
+                });
+              </script>
+              <p></p>
+              <button type="submit" class="btn btn-default text-danger">Publikuj</button>
+            </form>
+          </div>
+          <div class="col-md-3">
+            <h3>Jan Kowalski (zdjecie)</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisici elit,
+              <br>sed eiusmod tempor incidunt ut labore et dolore magna aliqua.
+              <br>Ut enim ad minim veniam, quis nostrud</p>
+            <hr>
+            <a href="#"><i class="fa fa-2x fa-cut fa-fw"></i></a>Zdrowie i uroda
+            <br>
+            <br>
+            <a href="#"><i class="fa fa-2x fa-car fa-fw"></i></a>Dojazd do domu klienta
+            <br>
+            <br>
+            <h4>Godziny pracy:
+              <br>
+              <br>Pon - Sob: 12:00 - 20:00</h4>
+            <hr>
+            <img class="img-responsive" src="http://maps.googleapis.com/maps/api/staticmap?center=Tombouctou,Mali&amp;zoom=12&amp;size=200x200&amp;sensor=false">
+            <hr>
+            <h4>Galeria</h4>
+            <a href="#"><img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="center-block img-responsive"></a>
+            <a href="#"><img src="http://pingendo.github.io/pingendo-bootstrap/assets/placeholder.png" class="center-block img-responsive"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
