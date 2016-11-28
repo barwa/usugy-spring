@@ -18,7 +18,7 @@
     <!--Enable annotations for Spring Security-->
     <security:global-method-security pre-post-annotations="enabled" />
 
-    <mvc:resources mapping="/assets/**" location="/WEB-INF/assets/" />
+    <mvc:resources mapping="/assets/**" location="/WEB-INF/assets_new/" />
 
     <mvc:interceptors>
     <mvc:interceptor>
@@ -44,7 +44,7 @@
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix">
-            <value>/WEB-INF/views/</value>
+            <value>/WEB-INF/views_new/</value>
         </property>
         <property name="suffix">
             <value>.jsp</value>

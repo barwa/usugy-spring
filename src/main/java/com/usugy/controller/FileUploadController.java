@@ -1,5 +1,6 @@
 package com.usugy.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +15,8 @@ import java.io.FileOutputStream;
 
 @RestController
 public class FileUploadController {
+
+    private static final Logger logger = Logger.getLogger(FileUploadController.class);
 
     @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     public @ResponseBody

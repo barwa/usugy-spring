@@ -126,8 +126,8 @@
         <li class="pushy-link">
             <form id="logout" action="${logoutUrl}" method="post" >
             <%--<input class="btn" type="submit" value="WYLOGUJ"/>--%>
-                <li><a class="btn" >Wyloguj</a></li>
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                <li><a href="/logout" class="btn" >Wyloguj</a></li>
+                <%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />--%>
              </form>
         </li>
     </ul>

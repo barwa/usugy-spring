@@ -4,6 +4,7 @@ import com.usugy.model.Account;
 import com.usugy.model.Offer;
 import com.usugy.model.OfferReport;
 import com.usugy.service.OfferService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -26,6 +27,8 @@ public class OfferController {
 
     @Autowired
     private OfferService offerService;
+
+    private static final Logger logger = Logger.getLogger(OfferController.class);
 
     @RequestMapping(value = "/offers", method = RequestMethod.GET)
     public String listOffers(Model model) {

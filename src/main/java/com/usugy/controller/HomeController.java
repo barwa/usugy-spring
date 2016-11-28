@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import javax.servlet.http.HttpSession;
 import java.security.Principal;
 
 /**
@@ -33,13 +34,19 @@ public class HomeController {
 //    private MailService mailService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home(Model model, Principal principal) {
+    public String home(Model model, HttpSession session) {
 
 //        if (principal == null) return "redirect:/signup";
 //        Account account = new Account();
 //        model.addAttribute("account", account);
         logger.info("Entered HomeController");
-        return "index3";
+        Account account = (Account)session.getAttribute("account");
+        if(account == null)
+        {
+            account = new Account();
+        }
+        model.addAttribute("account", account);
+        return "index";
     }
 
 }

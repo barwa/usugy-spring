@@ -32,11 +32,11 @@ public class Account implements UserDetails {
     @Column(unique = true)
     private String email;
 
-    @NotEmpty
+//    @NotEmpty
     //    @Pattern(regex = "[0-9]+")
     private String firstname;
 
-    @NotEmpty
+//    @NotEmpty
     //     @Pattern(regex = "[0-9]+")
     private String lastname;
 

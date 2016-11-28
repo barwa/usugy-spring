@@ -32,12 +32,22 @@
                         <p class="text-center text-muted">Nie masz jeszcze konta?
                             <a href="/signup">Zarejestruj się</a></p>
                         <hr>
-                        <c:if test="$(not empty error)">
+                        <c:choose>
+                            <c:when test="${error.equals('loginfailed')}">
+
                             <div>
-                                Your login was unsuccessful <br>
-                                Caused: ${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
+                                <spring:message code="login.incorrect"/> <br>
                             </div>
-                        </c:if>
+                            </c:when>
+                            <c:when test="${error.equals('logout')}">
+
+                                <div>
+                                    <spring:message code="logout.success"/>
+
+                                </div>
+                            </c:when>
+                        <%--</c:if>--%>
+                        </c:choose>
                         <form action="<c:url value='j_spring_security_check' />" name="f" method="post">
                             <div class="top-margin">
                                 <label><spring:message code="account.email"/>

@@ -1,9 +1,18 @@
 package com.usugy.controller;
 
+import org.apache.log4j.Logger;
+import org.hibernate.annotations.SourceType;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by tomek on 2016-09-08.
@@ -12,26 +21,36 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class SigninController {
 
+    private static final Logger logger = Logger.getLogger(SigninController.class);
+
     @RequestMapping(value = "/signin", method = RequestMethod.GET)
-    public String signin(ModelMap modelMap) {
+    public String signin(){
 
         return "signin3";
+
     }
 
     @RequestMapping(value = "/signinFailed", method = RequestMethod.GET)
     public String signinFailed(ModelMap modelMap) {
 
-        modelMap.addAttribute("error", "true");
-        return "signin3";
-    }
-    @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(ModelMap modelMap) {
-
-        return "logout";
+        logger.info("login failed");
+        modelMap.addAttribute("loginfailed", "true");
+        return "index";
     }
 
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public String error403(ModelMap modelMap) {
         return "403";
     }
+
+    @RequestMapping(value="/logout", method = RequestMethod.GET)
+    public String logout(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null){
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        modelMap.addAttribute("logout", "true");
+        return "/signin3";
+    }
+
 }
