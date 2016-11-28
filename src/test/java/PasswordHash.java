@@ -7,7 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class PasswordHash extends TestCase {
 
     public void testBCryptHash() {
-        String password = "asdf";
+        String password = "asd";
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
         String hashedPassword = bCryptPasswordEncoder.encode(password);
         System.out.println(hashedPassword);
