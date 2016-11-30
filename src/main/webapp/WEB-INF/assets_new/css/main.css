@@ -3117,7 +3117,8 @@ position: relative;
 }
 .siginincontainer,
 .siginupcontainer,
-.forgetpasswordcontainer{
+.forgetpasswordcontainer,
+.customcontainer {
     position: absolute !important;
     top: 0;
     left: 0;
@@ -4422,7 +4423,7 @@ footer{
 		min-height:730px;
 		width: 90vw;
 	}
-	.siginincontainer, .siginupcontainer, .forgetpasswordcontainer{
+	.siginincontainer, .siginupcontainer, .forgetpasswordcontainer, .customcontainer {
 		padding:50px;
 	}
 	.comments-thumb,

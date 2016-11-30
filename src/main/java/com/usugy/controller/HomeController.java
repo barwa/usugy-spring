@@ -1,6 +1,5 @@
 package com.usugy.controller;
 
-import com.sun.xml.internal.bind.v2.runtime.output.SAXOutput;
 import com.usugy.model.Account;
 import com.usugy.service.AccountService;
 import com.usugy.service.MailService;

@@ -41,17 +41,27 @@ public class SignupController {
 //        return "signup3";
 //    }
 
+    
+    @RequestMapping(value = "/signup", method = RequestMethod.GET)
+    public String signupGet(@Valid @ModelAttribute("account") Account account, BindingResult result, HttpSession session) {
 
-    @RequestMapping(value = "/", method = RequestMethod.POST)
-    public String signup(@Valid @ModelAttribute("account") Account account, BindingResult result, HttpSession session) {
+
+            return "signup";
+
+            
+    }
+    
+
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
+    public String signupPost(@Valid @ModelAttribute("account") Account account, BindingResult result, HttpSession session) {
 
         accountService.validateIfAccountAlreadyExist(account, result);
         if(result.hasErrors())
         {
-            return "index";
+            return "signup";
         }
         accountService.createAndSaveNewAccount(account);
-        accountService.sendMailAskForConfirmation(account);;
+        accountService.sendMailAskForConfirmation(account);
         return "redirect:/";
     }
 

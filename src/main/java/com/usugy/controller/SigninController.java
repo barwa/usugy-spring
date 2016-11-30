@@ -7,12 +7,18 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.usugy.model.Account;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 /**
  * Created by tomek on 2016-09-08.
@@ -24,9 +30,9 @@ public class SigninController {
     private static final Logger logger = Logger.getLogger(SigninController.class);
 
     @RequestMapping(value = "/signin", method = RequestMethod.GET)
-    public String signin(){
+    public String signin(@Valid @ModelAttribute("account") Account account, BindingResult result, HttpSession session){
 
-        return "signin3";
+        return "signin";
 
     }
 
