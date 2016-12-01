@@ -51,14 +51,14 @@ public class SigninController {
         return "403";
     }
 
-    @RequestMapping(value="/logout", method = RequestMethod.GET)
-    public String logout(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        if (auth != null){
-            new SecurityContextLogoutHandler().logout(request, response, auth);
-        }
-        modelMap.addAttribute("logout", "true");
-        return "index";
-    }
+//    @RequestMapping(value="/logout", method = RequestMethod.GET)
+//    public String logout(ModelMap modelMap, HttpServletRequest request, HttpServletResponse response) {
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        if (auth != null){
+//            new SecurityContextLogoutHandler().logout(request, response, auth);
+//        }
+//        modelMap.addAttribute("logout", "true");
+//        return "index";
+//    }
 
 }
