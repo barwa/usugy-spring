@@ -38,12 +38,12 @@ public class SigninController {
     
     
 
-    @RequestMapping(value = "/signinFailed", method = RequestMethod.GET)
+    @RequestMapping(value = "/signinfailed", method = RequestMethod.POST)
     public String signinFailed(ModelMap modelMap) {
 
         logger.info("login failed");
         modelMap.addAttribute("loginfailed", true);
-        return "index";
+        return "signin";
     }
 
     @RequestMapping(value = "/403", method = RequestMethod.GET)
@@ -58,7 +58,7 @@ public class SigninController {
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
         modelMap.addAttribute("logout", "true");
-        return "/signin3";
+        return "index";
     }
 
 }

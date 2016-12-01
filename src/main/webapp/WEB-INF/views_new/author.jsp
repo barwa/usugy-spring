@@ -1,4 +1,9 @@
+
+
+
+
 <jsp:include page="header.jsp"></jsp:include>
+</header>
 
 	<!--==================================Section Open=================================-->
 	<section class="aliceblue">

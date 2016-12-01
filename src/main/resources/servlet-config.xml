@@ -19,7 +19,12 @@
     <security:global-method-security pre-post-annotations="enabled" />
 
     <mvc:resources mapping="/assets/**" location="/WEB-INF/assets_new/" />
-
+    <mvc:resources mapping="/images/**" location="/WEB-INF/assets_new/images/" />
+    <mvc:resources mapping="/css/**" location="/WEB-INF/assets_new/css/" />
+        <mvc:resources mapping="/font/**" location="/WEB-INF/assets_new/font/" />
+        <mvc:resources mapping="/js/**" location="/WEB-INF/assets_new/js/" />
+           <mvc:resources mapping="/lib/**" location="/WEB-INF/assets_new/lib/" />
+    
     <mvc:interceptors>
     <mvc:interceptor>
         <mvc:mapping path="/**" />
