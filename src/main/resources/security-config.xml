@@ -34,7 +34,7 @@
 			default-target-url="/" username-parameter="j_username"
 			password-parameter="j_password" login-processing-url="/j_spring_security_check" />
 		<csrf />
-		<logout logout-success-url="/"  logout-url="/j_spring_security_logout" />
+		<logout logout-success-url="/"  invalidate-session="true" logout-url="/logout" />
         <!--// j_spring_security_logout  -->
 		<!--will display that page if user doesn't have correct ROLE assigned to 
 			see requested page -->
